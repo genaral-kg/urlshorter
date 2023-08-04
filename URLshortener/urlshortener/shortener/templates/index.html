@@ -1,0 +1,24 @@
+<!-- shortener/templates/index.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Enter your URL:</h2>
+        <input type="url" name="long_url" required>
+        <button type="submit" onclick="stopAnimation()">Shorten</button>
+    </form>
+
+    <!-- Add the "Made by Kutmanbek" text -->
+    <div class="made-by">Made by Kutmanbek</div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
